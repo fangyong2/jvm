@@ -4,6 +4,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicLongArray;
 
 /**
  * 同步任务
@@ -16,7 +18,8 @@ import java.util.Random;
 public class MyTask {
     public static Random random =new Random();
 
-    @Async
+
+    @Async("taskExecutor")
     public void doTaskOne() throws Exception {
         System.out.println("开始做任务一");
         long start = System.currentTimeMillis();
@@ -24,7 +27,8 @@ public class MyTask {
         long end = System.currentTimeMillis();
         System.out.println("完成任务一，耗时：" + (end - start) + "毫秒");
     }
-    @Async
+
+    @Async("taskExecutor")
     public void doTaskTwo() throws Exception {
         System.out.println("开始做任务二");
         long start = System.currentTimeMillis();
@@ -32,7 +36,8 @@ public class MyTask {
         long end = System.currentTimeMillis();
         System.out.println("完成任务二，耗时：" + (end - start) + "毫秒");
     }
-    @Async
+
+    @Async("taskExecutor")
     public void doTaskThree() throws Exception {
         System.out.println("开始做任务三");
         long start = System.currentTimeMillis();
