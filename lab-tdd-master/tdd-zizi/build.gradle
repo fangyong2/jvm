@@ -1,0 +1,23 @@
+group 'com.labcloud'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 测试框架
+    testImplementation('org.testng:testng:6.14.3')
+    // 单骑走天下的断言器
+    testImplementation('org.hamcrest:hamcrest-library:2.1')
+    // mock的一个实现框架mockito
+    testImplementation('org.mockito:mockito-core:2.21.0')
+    // 测试报告生成器
+    testImplementation('org.uncommons:reportng:1.1.4')
+    // 测试报告生成器依赖
+    testImplementation('com.google.inject:guice:3.0')
+}

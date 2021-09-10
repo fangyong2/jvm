@@ -1,0 +1,6 @@
+rootProject.name = 'lab-tdd'
+
+include 'tdd-demo'
+include 'tdd-yiyi'
+include 'tdd-zizi'
+

@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: lab-mybatis
+  datasource:
+    url: jdbc:mysql://121.37.170.216:3306/lab?serverTimezone=GMT%2B8
+    username: root
+    password: fy123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
